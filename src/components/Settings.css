@@ -1,0 +1,59 @@
+.settings-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.settings-button {
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-button:hover {
+  background-color: var(--accent-secondary);
+}
+
+.settings-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: var(--bg-section);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.settings-menu button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-menu button:hover {
+  background-color: var(--bg-card);
+}
+
+.settings-menu button:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.settings-menu button:last-child {
+  border-radius: 0 0 8px 8px;
+}

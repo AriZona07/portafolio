@@ -1,173 +1,219 @@
+/* === VARIABLES DE COLOR === */
+:root {
+  /* Tema oscuro (por defecto) */
+  --bg-body: #1a1a1a;
+  --bg-section: #2a2a2a;
+  --bg-card: #333;
+  --text-primary: #e0e0e0;
+  --text-secondary: #c8a2c8;
+  --text-accent: #ba55d3;
+  --accent-primary: #6a0dad;
+  --accent-secondary: #4b0082;
+  --border-accent: #ba55d3;
+  --link-color: #ba55d3;
+  --list-bg: #6a0dad;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-system {
+    --bg-body: #f0e6ff;
+    --bg-section: #ffffff;
+    --bg-card: #f8f8f8;
+    --text-primary: #2a2a2a;
+    --text-secondary: #6a0dad;
+    --text-accent: #8a2be2;
+    --accent-primary: #dda0dd;
+    --accent-secondary: #ba55d3;
+    --border-accent: #8a2be2;
+    --link-color: #8a2be2;
+    --list-bg: #dda0dd;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Tema claro forzado */
+.theme-light {
+  --bg-body: #f0e6ff;
+  --bg-section: #ffffff;
+  --bg-card: #f8f8f8;
+  --text-primary: #2a2a2a;
+  --text-secondary: #6a0dad;
+  --text-accent: #8a2be2;
+  --accent-primary: #dda0dd;
+  --accent-secondary: #ba55d3;
+  --border-accent: #8a2be2;
+  --link-color: #8a2be2;
+  --list-bg: #dda0dd;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Tema oscuro forzado */
+.theme-dark {
+  --bg-body: #1a1a1a;
+  --bg-section: #2a2a2a;
+  --bg-card: #333;
+  --text-primary: #e0e0e0;
+  --text-secondary: #c8a2c8;
+  --text-accent: #ba55d3;
+  --accent-primary: #6a0dad;
+  --accent-secondary: #4b0082;
+  --border-accent: #ba55d3;
+  --link-color: #ba55d3;
+  --list-bg: #6a0dad;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
 /* === ESTILOS GLOBALES === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a; /* Fondo oscuro */
-  color: #e0e0e0; /* Texto claro */
+  background-color: var(--bg-body);
+  color: var(--text-primary);
 }
 
 /* === ENCABEZADO === */
 header {
-  /* Usamos un degradado para un fondo más dinámico */
-  background: linear-gradient(135deg, #4b0082 0%, #6a0dad 100%);
-  color: #c8a2c8; /* Lila */
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  color: var(--text-secondary);
   text-align: center;
-  padding: 4rem 2rem; /* Más espacio vertical para mayor impacto */
-  border-bottom: 4px solid #ba55d3; /* Borde inferior para separar secciones */
+  padding: 4rem 2rem;
+  border-bottom: 4px solid var(--border-accent);
 }
 
-/* Estilos generales para los encabezados principales (h1) y de sección (h2) */
 h1, h2 {
-  color: #ba55d3; /* Lila más brillante */
+  color: var(--text-accent);
 }
 
-/* Estilos específicos para los textos del encabezado */
 header h1 {
   margin: 0;
   font-size: 2.8rem;
   letter-spacing: 1.5px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  text-shadow: 2px 2px 5px var(--shadow);
 }
 
 header h3 {
   margin: 0.5rem 0 0;
-  font-weight: 300; /* Hacemos el subtítulo más ligero */
-  color: #e0e0e0;
+  font-weight: 300;
+  color: var(--text-primary);
 }
 
-/* Estilos base para todas las secciones de contenido (Sobre Mí, Habilidades, etc.) */
+/* Estilos base para todas las secciones de contenido */
 section {
   padding: 2rem;
   margin: 1rem;
-  background-color: #2a2a2a; /* Fondo sección oscuro */
+  background-color: var(--bg-section);
   border-radius: 8px;
 }
 
 /* === SECCIÓN DE HABILIDADES === */
-
-/* Contenedor principal de las habilidades para usar Flexbox */
 .skills-container {
   display: flex;
-  justify-content: space-around; /* Distribuye el espacio entre las columnas */
-  flex-wrap: wrap; /* Permite que las columnas se apilen en pantallas pequeñas */
-  gap: 2rem; /* Espacio entre las columnas */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-/* Estilos para cada categoría de habilidad (Técnicas y Blandas) */
 .skill-category {
-  flex: 1; /* Permite que cada columna crezca y ocupe el espacio disponible */
-  min-width: 250px; /* Ancho mínimo antes de que se apilen */
+  flex: 1;
+  min-width: 250px;
 }
 
-/* Estilo para los subtítulos dentro de la sección de habilidades */
 #skills h3 {
-  color: #c8a2c8;
-  border-bottom: 2px solid #6a0dad;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--accent-primary);
   padding-bottom: 0.5rem;
 }
 
-/* Quita los estilos por defecto de las listas no ordenadas */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
-/* Estilos para los elementos de la lista (usado en Habilidades) */
 li {
-  background-color: #6a0dad; /* Morado */
+  background-color: var(--list-bg);
   margin: 0.5rem 0;
   padding: 0.5rem;
   border-radius: 4px;
-  color: #e0e0e0; /* Cambiado a un color más legible */
+  color: var(--text-primary);
 }
 
 /* === SECCIÓN DE PROYECTOS === */
-
-/* Contenedor de los proyectos para usar CSS Grid */
 .projects-container {
   display: grid;
-  /* Crea columnas responsivas: se ajustan automáticamente al ancho disponible */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
 .project-card {
-  background-color: #333;
+  background-color: var(--bg-card);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
-  flex-direction: column; /* Alinea el contenido interno verticalmente */
-  justify-content: space-between; /* Empuja el botón 'Ver en GitHub' hacia abajo */
-  border-left: 4px solid #6a0dad; /* Acento de color a la izquierda */
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 4px solid var(--accent-primary);
 }
 
-/* Título dentro de la tarjeta de proyecto */
 .project-card h3 {
   margin-top: 0;
-  color: #c8a2c8;
+  color: var(--text-secondary);
 }
 
 .project-tech {
   font-style: italic;
-  color: #aaa;
+  color: #aaa; /* Mantener gris para ambos temas, o ajustar si necesario */
   font-size: 0.9em;
   margin-bottom: 1rem;
 }
 
-/* Estilo para los enlaces dentro de las tarjetas de proyecto (botones) */
 .project-card a {
   align-self: flex-start;
   margin-top: 1rem;
-  background-color: #6a0dad;
-  color: #e0e0e0;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
-/* Efecto hover para los botones de proyecto */
 .project-card a:hover {
-  background-color: #4b0082;
+  background-color: var(--accent-secondary);
 }
 
-/* Estilo general para todos los enlaces (no afecta a los que ya tienen estilos específicos) */
 a {
-  color: #ba55d3;
+  color: var(--link-color);
 }
 
 /* === SECCIÓN DE CONTACTO === */
-
-/* Centra el contenido de la sección de contacto */
 #contact {
   text-align: center;
 }
 
-/* Contenedor de los enlaces de contacto para usar Flexbox */
 .contact-links {
   display: flex;
-  justify-content: center; /* Centra los botones horizontalmente */
-  gap: 1.5rem; /* Espacio entre los botones */
-  flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin-top: 2rem;
 }
 
 .contact-item {
-  background-color: #6a0dad;
-  color: #e0e0e0;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: transform 0.3s, background-color 0.3s; /* Transición suave para el hover */
-  display: inline-flex; /* Permite alinear el ícono y el texto */
-  align-items: center; /* Centra verticalmente el ícono y el texto */
-  gap: 0.5rem; /* Espacio entre el ícono y el texto */
+  transition: transform 0.3s, background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Efecto hover para los botones de contacto */
 .contact-item:hover {
-  background-color: #4b0082;
+  background-color: var(--accent-secondary);
   transform: translateY(-5px);
 }
